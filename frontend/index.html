@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1d1d22" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="description" content="Kunnal — software engineer building full-stack products with React, Node.js and Go. MCA candidate at CHRIST (Deemed to be University), Bengaluru. I build solutions, not just code." />
+    <meta name="author" content="Kunnal" />
+    <meta property="og:title" content="Kunnal — Software Engineer" />
+    <meta property="og:description" content="I build solutions, not just code. Full-stack engineering portfolio: React, Node.js, Go and the systems thinking behind them." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Kunnal — Software Engineer" />
+    <meta name="twitter:description" content="I build solutions, not just code." />
+    <title>Kunnal — Software Engineer</title>
+    <script>
+      // Apply a saved light theme before first paint so it never flashes dark.
+      try {
+        if (localStorage.getItem('theme') === 'light') {
+          document.documentElement.classList.remove('dark');
+          document.querySelector('meta[name="theme-color"]').content = '#fbfbfb';
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
