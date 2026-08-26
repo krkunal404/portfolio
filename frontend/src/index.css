@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;600&display=swap')
+layer(base);
+
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: Work Sans, system-ui, sans-serif;
+  --font-display: Fraunces, Georgia, Cambria, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --text-display-xl: clamp(4.75rem, 12vw, 10.25rem);
+  --text-display-xl--line-height: 0.88;
+  --text-display-xl--letter-spacing: -0.055em;
+  --text-display-lg: clamp(3.5rem, 7vw, 6.75rem);
+  --text-display-lg--line-height: 0.94;
+  --text-display-lg--letter-spacing: -0.045em;
+  --text-display-md: clamp(2.75rem, 5vw, 4.75rem);
+  --text-display-md--line-height: 0.98;
+  --text-display-md--letter-spacing: -0.035em;
+  --text-body-lg: 1.375rem;
+  --text-body-lg--line-height: 1.7;
+  --text-body: 1.25rem;
+  --text-body--line-height: 1.65;
+  --text-body-sm: 1.125rem;
+  --text-body-sm--line-height: 1.55;
+  --text-label: 0.9375rem;
+  --text-label--line-height: 1.4;
+  --text-label--letter-spacing: 0.2em;
+  --text-micro: 0.875rem;
+  --text-micro--line-height: 1.4;
+  --text-micro--letter-spacing: 0.18em;
+  --text-xs: 1rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 1.125rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.25rem;
+  --text-base--line-height: 1.5;
+  --text-lg: 1.375rem;
+  --text-lg--line-height: 1.5;
+  --text-xl: 1.5rem;
+  --text-xl--line-height: 1.4;
+  --text-2xl: 1.75rem;
+  --text-2xl--line-height: 1.35;
+  --text-3xl: 2rem;
+  --text-3xl--line-height: 1.25;
+  --text-4xl: 2.5rem;
+  --text-4xl--line-height: 1.15;
+  --text-5xl: 3rem;
+  --text-5xl--line-height: 1.1;
+  --text-6xl: 3.75rem;
+  --text-6xl--line-height: 1;
+  --text-7xl: 4.5rem;
+  --text-7xl--line-height: 1;
+  --text-8xl: 6rem;
+  --text-8xl--line-height: 1;
+  --text-9xl: 8rem;
+  --text-9xl--line-height: 1;
+
+  --radius-panel: 1rem;
+  --radius-control: 0.65rem;
+
+  --color-light-bg: rgb(var(--color-canvas));
+  --color-light-text: rgb(var(--color-ink));
+  --color-light-muted: rgb(var(--color-muted));
+  --color-light-border: rgb(var(--color-line));
+  --color-light-card: rgb(var(--color-surface));
+  --color-light-glass: rgb(var(--color-surface) / 0.85);
+
+  --color-dark-bg: rgb(var(--color-canvas));
+  --color-dark-card: rgb(var(--color-surface));
+  --color-dark-text: rgb(var(--color-ink));
+  --color-dark-muted: rgb(var(--color-muted));
+  --color-dark-border: rgb(var(--color-line));
+  --color-dark-glass: rgb(var(--color-surface) / 0.85);
+
+  --color-brand-purple: rgb(var(--color-action));
+  --color-brand-cyan: rgb(var(--color-action));
+  --color-brand-blue: rgb(var(--color-action));
+
+  --background-image-brand-gradient: linear-gradient(
+    115deg,
+    #171717 0%,
+    #404040 100%
+  );
+  --background-image-brand-gradient-solid: linear-gradient(
+    115deg,
+    #171717 0%,
+    #404040 100%
+  );
+
+  --animate-fade-in: fadeIn 0.5s ease-out forwards;
+  --animate-slide-up: slideUp 0.5s ease-out forwards;
+  --animate-scan: scan 1.8s linear infinite;
+  --animate-orbit: orbit 7s linear infinite;
+  --animate-pulse-glow: pulseGlow 2.4s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-slow: float 9s ease-in-out infinite;
+  --animate-float-delay: float 7s ease-in-out 1.5s infinite;
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-gradient-shift: gradientShift 6s ease infinite;
+  --animate-glow-pulse: glowPulse 4.5s ease-in-out infinite;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes scan {
+    0% {
+      transform: translateY(-130%);
+    }
+    100% {
+      transform: translateY(230%);
+    }
+  }
+  @keyframes orbit {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes pulseGlow {
+    0%,
+    100% {
+      transform: scale(1);
+      filter: drop-shadow(0 0 10px rgba(139, 124, 249, 0.55));
+    }
+    50% {
+      transform: scale(1.07);
+      filter: drop-shadow(0 0 22px rgba(34, 211, 238, 0.9));
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-16px);
+    }
+  }
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes gradientShift {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  @keyframes glowPulse {
+    0%,
+    100% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(1.15);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+
+  /* Tailwind v4 dropped the pointer cursor on buttons; restore v3 behaviour. */
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@utility section-container {
+  /* Shared layout and type system */
+  @apply min-h-svh px-6 sm:px-10 md:px-14 lg:px-24 xl:px-32 py-24 sm:py-32 relative flex flex-col justify-center border-t border-light-border dark:border-dark-border;
+}
+
+@utility section-eyebrow {
+  @apply inline-flex items-center gap-2 font-mono text-label font-medium uppercase text-light-muted dark:text-dark-muted mb-5;
+}
+
+@utility section-title {
+  @apply max-w-3xl font-display text-display-md font-semibold text-light-text dark:text-dark-text mb-5;
+}
+
+/* Kept in the components layer (not @utility), with letter-spacing set directly
+   rather than via `tracking-tight` (which sets --tw-tracking), so a size utility
+   such as `text-display-lg` can still override it, as in Tailwind v3. */
+@layer components {
+  .type-display {
+    @apply font-display font-semibold text-light-text dark:text-dark-text;
+    letter-spacing: var(--tracking-tight);
+  }
+}
+
+@utility type-body {
+  @apply font-sans text-body text-light-text dark:text-dark-text;
+}
+
+@utility type-body-muted {
+  @apply font-sans text-body-sm text-light-muted dark:text-dark-muted;
+}
+
+@utility type-meta {
+  @apply font-mono text-micro font-medium uppercase text-light-muted dark:text-dark-muted;
+}
+
+@utility section-divider {
+  @apply w-14 h-1 rounded-full bg-brand-gradient mb-10;
+}
+
+@utility gradient-text {
+  @apply text-light-text dark:text-dark-text;
+}
+
+@utility glass {
+  /* Card surfaces */
+  @apply bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border;
+}
+
+@utility glass-panel {
+  @apply glass rounded-panel;
+}
+
+@utility glass-card {
+  @apply glass rounded-2xl transition-all duration-300 hover:border-brand-purple/40 dark:hover:border-brand-cyan/40;
+}
+
+@utility btn-primary {
+  /* Buttons */
+  @apply relative inline-flex min-h-12 items-center gap-2 rounded-full bg-light-text dark:bg-dark-text px-6 py-3 text-body-sm font-semibold text-light-bg dark:text-dark-bg shadow-xs transition-all duration-300 hover:opacity-85 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-light-muted dark:focus-visible:ring-dark-muted focus-visible:ring-offset-2 focus-visible:ring-offset-light-bg dark:focus-visible:ring-offset-dark-bg;
+}
+
+@utility btn-secondary {
+  @apply glass inline-flex min-h-12 items-center gap-2 rounded-full px-6 py-3 text-body-sm font-semibold text-light-text dark:text-dark-text transition-all duration-300 hover:border-light-text/40 dark:hover:border-dark-text/40 hover:-translate-y-0.5 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-light-muted dark:focus-visible:ring-dark-muted focus-visible:ring-offset-2 focus-visible:ring-offset-light-bg dark:focus-visible:ring-offset-dark-bg;
+}
+
+@utility skill-tag {
+  @apply px-3 py-1 text-sm font-medium rounded-full border border-light-border dark:border-dark-border text-light-muted dark:text-dark-muted bg-light-card dark:bg-dark-card transition-colors duration-200;
+}
+
+@utility form-input {
+  @apply w-full rounded-control px-4 py-3.5 glass text-body-sm text-light-text dark:text-dark-text placeholder-light-muted dark:placeholder-dark-muted focus:outline-hidden focus:ring-2 focus:ring-light-muted dark:focus:ring-dark-muted focus:border-transparent transition-all duration-200;
+}
+
+@utility nav-link {
+  @apply relative text-sm text-light-muted dark:text-dark-muted hover:text-light-text dark:hover:text-dark-text transition-colors duration-200 font-medium;
+
+  &.is-active {
+    @apply text-light-text dark:text-dark-text;
+  }
+}
+
+@utility is-active {
+  &.nav-link {
+    @apply text-light-text dark:text-dark-text;
+  }
+}
+
+@utility label-technical {
+  /* Technical / editorial typography utilities */
+  @apply type-meta;
+}
+
+@utility numeral {
+  @apply font-mono tabular-nums;
+}
+
+@utility grid-texture {
+  /* Fine background grid — discoverable detail, not a loud effect */
+  background-image:
+    linear-gradient(to right, currentColor 1px, transparent 1px),
+    linear-gradient(to bottom, currentColor 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+@layer base {
+  :root {
+    --color-canvas: 251 251 251;
+    --color-surface: 255 255 255;
+    --color-ink: 23 23 23;
+    --color-muted: 115 115 115;
+    --color-subtle: 163 163 163;
+    --color-line: 212 212 220;
+    --color-action: 23 23 23;
+    --color-action-contrast: 251 251 251;
+    --selection: 23 23 23;
+  }
+
+  .dark {
+    --color-canvas: 29 29 34;
+    --color-surface: 12 12 14;
+    --color-ink: 245 245 245;
+    --color-muted: 163 163 163;
+    --color-subtle: 115 115 115;
+    --color-line: 45 45 53;
+    --color-action: 245 245 245;
+    --color-action-contrast: 29 29 34;
+    --selection: 245 245 245;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Work Sans', system-ui, sans-serif;
+    @apply bg-light-bg text-light-text transition-colors duration-300 overflow-x-hidden;
+  }
+
+  .dark body {
+    @apply bg-dark-bg text-dark-text;
+  }
+
+  ::selection {
+    @apply bg-brand-purple/30 text-light-text dark:text-dark-text;
+  }
+
+  body.cursor-active,
+  body.cursor-active a,
+  body.cursor-active button {
+    cursor: none;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-light-bg dark:bg-dark-bg;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-light-border dark:bg-dark-border rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-light-muted dark:bg-dark-muted;
+}
+
+/* Theme switch: circular reveal driven by ThemeContext via the View Transitions API */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 2;
+}
+
+.theme-switching,
+.theme-switching *,
+.theme-switching *::before,
+.theme-switching *::after {
+  transition: none !important;
+}
